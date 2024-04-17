@@ -620,3 +620,24 @@ mysql> select * from employees WHERE department_id IN (SELECT department_id FROM
 +-------------+-------------+------------+-----------------------------------+--------------+------------+--------+--------+------------+---------------+
 18 rows in set (0.00 sec)
 
+mysql> select * from employees WHERE department_id IN (SELECT department_id FROM departments WHERE location_id != 1700);
++-------------+------------+-------------+-----------------------------------+--------------+------------+--------+--------+------------+---------------+
+| employee_id | first_name | last_name   | email                             | phone_number | hire_date  | job_id | salary | manager_id | department_id |
++-------------+------------+-------------+-----------------------------------+--------------+------------+--------+--------+------------+---------------+
+| 103         | Alexander  | Hunold      | alexander.hunold@sqltutorial.org  | 5904234567   | 1990-01-03 | 9      |   9000 | 102        | 6             |
+| 104         | Bruce      | Ernst       | bruce.ernst@sqltutorial.org       | 5904234568   | 1991-05-21 | 9      |   6000 | 103        | 6             |
+| 105         | David      | Austin      | david.austin@sqltutorial.org      | 5904234569   | 1997-06-25 | 9      |   4800 | 103        | 6             |
+| 106         | Valli      | Pataballa   | valli.pataballa@sqltutorial.org   | 5904234560   | 1998-02-05 | 9      |   4800 | 103        | 6             |
+| 107         | Diana      | Lorentz     | diana.lorentz@sqltutorial.org     | 5904235567   | 1999-02-07 | 9      |   4200 | 103        | 6             |
+| 120         | Matthew    | Weiss       | matthew.weiss@sqltutorial.org     | 6501231234   | 1996-07-18 | 19     |   8000 | 100        | 5             |
+| 121         | Adam       | Fripp       | adam.fripp@sqltutorial.org        | 6501232234   | 1997-04-10 | 19     |   8200 | 100        | 5             |
+| 122         | Payam      | Kaufling    | payam.kaufling@sqltutorial.org    | 6501233234   | 1995-05-01 | 19     |   7900 | 100        | 5             |
+| 123         | Shanta     | Vollman     | shanta.vollman@sqltutorial.org    | 6501234234   | 1997-10-10 | 19     |   6500 | 100        | 5             |
+| 126         | Irene      | Mikkilineni | irene.mikkilineni@sqltutorial.org | 6501241224   | 1998-09-28 | 18     |   2700 | 120        | 5             |
+| 192         | Sarah      | Bell        | sarah.bell@sqltutorial.org        | 6505011876   | 1996-02-04 | 17     |   4000 | 123        | 5             |
+| 193         | Britney    | Everett     | britney.everett@sqltutorial.org   | 6505012876   | 1997-03-03 | 17     |   3900 | 123        | 5             |
+| 203         | Susan      | Mavris      | susan.mavris@sqltutorial.org      | 5151237777   | 1994-06-07 | 8      |   6500 | 101        | 4             |
+| 204         | Hermann    | Baer        | hermann.baer@sqltutorial.org      | 5151238888   | 1994-06-07 | 12     |  10000 | 101        | 7             |
++-------------+------------+-------------+-----------------------------------+--------------+------------+--------+--------+------------+---------------+
+14 rows in set (0.00 sec)
+
